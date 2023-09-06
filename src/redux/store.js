@@ -1,14 +1,9 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
-
-const rootReducer = combineReducers({
-});
-
-const middleware = [logger];
+import { configureStore } from '@reduxjs/toolkit';
+import rocketsSlice from './rockets/rocketsSlice';
 
 const store = configureStore({
-  reducer: rootReducer,
-  middleware,
+  reducer: {
+    rockets: rocketsSlice,
+  },
 });
-
 export default store;
