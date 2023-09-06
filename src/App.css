@@ -1,0 +1,23 @@
+.img-sm {
+  width: 10%;
+}
+
+.img-md {
+  width: 45%;
+}
+
+.flex {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+}
