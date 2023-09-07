@@ -32,22 +32,24 @@ const Rockets = () => {
     dispatch(cancelRocket(rocketId));
   };
   return (
-    <ul>
+    <ul className="container m-auto">
       {rockets.map((rocket) => (
-        <li key={rocket.id} className="flex">
-          <div>
-            <img src={rocket.flickr_images[0]} alt="starship" className="img-md" />
+        <li key={rocket.id} className="row mt-5 mb-5">
+          <div className="col-md-2 mb-2">
+            <img src={rocket.flickr_images[0]} alt="starship" className=" img-fluid" />
           </div>
-          <div>
+          <div className="col-md-10">
             <div>
-              {rocket.reserved && <span className="reserved">Reserved</span>}
               <strong>{rocket.name}</strong>
             </div>
-            <div>{rocket.description}</div>
+            <div className="col">
+              {rocket.reserved && <span className="badge bg-info m-2">Reserved</span>}
+              {rocket.description}
+            </div>
             {rocket.reserved ? (
-              <button type="submit" onClick={() => handleCancelRocket(rocket.id)}>Cancel Reservation</button>
+              <button type="button" className="btn btn-light" onClick={() => handleCancelRocket(rocket.id)}>Cancel Reservation</button>
             ) : (
-              <button type="submit" onClick={() => handleReserveRocket(rocket.id)}>Reserve Rocket</button>
+              <button type="button" className="btn btn-primary" onClick={() => handleReserveRocket(rocket.id)}>Reserve Rocket</button>
             )}
           </div>
         </li>
