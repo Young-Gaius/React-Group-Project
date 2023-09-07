@@ -7,13 +7,14 @@ const links = [
   { path: 'profile', text: 'My Profile' },
 ];
 const Navbar = () => (
-  <nav className="navbar auto-margin zero-div">
-    <div>
-      <img src={planet} alt="planet logo" className="img-sm" />
+  <nav className="nav nav-justified border-bottom justify-content-between">
+    <div className="navbar-brand row mb-3">
+      <img src={planet} alt="planet logo" className="col-sm-2 img-fluid" />
+      <h1 className="col-md-2 mt-4"> Space Traveler&#39;s Hub</h1>
     </div>
-    <ul className="zero-div">
+    <ul className="d-flex">
       {links.map((link) => (
-        <li key={link.text}>
+        <li className="mt-5 mb-5 mx-3" key={link.text}>
           <NavLink to={link.path}>{link.text}</NavLink>
         </li>
       ))}

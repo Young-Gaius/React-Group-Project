@@ -40,7 +40,7 @@ function Missions() {
 
   return (
     <>
-      <table className="table">
+      <table className="table m-auto">
         <thead>
           <tr>
             <th>Mission</th>
